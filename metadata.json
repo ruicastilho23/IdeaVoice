@@ -1,0 +1,7 @@
+{
+  "name": "IdeaVoice Bilingual",
+  "description": "A beautiful, minimalist voice note app.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
