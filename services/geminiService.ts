@@ -5,8 +5,7 @@ import { blobToBase64 } from '../utils';
 
 export const processAudioNote = async (audioBlob: Blob, language: 'en' | 'th' = 'en'): Promise<ProcessingResult> => {
   try {
-    const apiKey = process.env.API_KEY;
-    if (!apiKey) {
+const apiKey = process.env.GEMINI_API_KEY;    if (!apiKey) {
       throw new Error("API Key is missing");
     }
 
