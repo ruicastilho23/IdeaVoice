@@ -116,10 +116,21 @@ const App: React.FC = () => {
       
       {/* Header */}
       <header className="pt-6 pb-4 px-6 sticky top-0 z-10 backdrop-blur-md bg-transparent">
-        <div className="relative flex items-center justify-start mb-6">
+        <div className="flex flex-row items-center justify-between mb-6 gap-2">
             
-            {/* Settings Button - Absolute Top Right */}
-            <div className="absolute top-0 right-0 h-full flex items-center">
+            {/* Left Aligned Branding Row */}
+            <div className="flex flex-row items-center gap-3 sm:gap-4 flex-1 overflow-hidden">
+                <div className="flex-shrink-0">
+                    <CatLogo className="w-20 h-20 sm:w-24 sm:h-24" /> 
+                </div>
+                <div className="flex flex-col text-left justify-center min-w-0">
+                    <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-white drop-shadow-md leading-none truncate pb-1">IdeaVoice</h1>
+                    <p className="text-sm sm:text-base font-medium mt-0 tracking-wide text-slate-400 truncate">{t.app.slogan}</p>
+                </div>
+            </div>
+
+            {/* Settings Button - Flex Item (No Absolute) */}
+            <div className="flex-shrink-0 self-start mt-2">
                 <button 
                     onClick={() => setIsSettingsOpen(true)}
                     className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white border border-white/10 shadow-lg hover:bg-white/20 transition-colors"
@@ -127,17 +138,6 @@ const App: React.FC = () => {
                 >
                     <Settings size={20} className="text-blue-200" />
                 </button>
-            </div>
-
-            {/* Left Aligned Branding Row */}
-            <div className="flex flex-row items-center gap-4">
-                <div className="flex-shrink-0">
-                    <CatLogo className="w-24 h-24" /> 
-                </div>
-                <div className="flex flex-col text-left justify-center">
-                    <h1 className="text-5xl font-bold tracking-tight text-white drop-shadow-md leading-none">IdeaVoice</h1>
-                    <p className="text-base font-medium mt-0 tracking-wide text-slate-400">{t.app.slogan}</p>
-                </div>
             </div>
         </div>
 
